@@ -4,10 +4,10 @@ jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
+      - uses: ansible/ansible-lint-action@v4.1.0.post0
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - uses: ansible/ansible-lint-action@v4.1.0.post0
       - run: npm install -g bats
       - run: bats -v
