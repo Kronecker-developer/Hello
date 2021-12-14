@@ -15,4 +15,4 @@ jobs:
         environment: 'AzureStack'
 
     - run: |
-        az account show --query "{ subscription_id: id }"
+        az account list --query "[?isDefault]"
